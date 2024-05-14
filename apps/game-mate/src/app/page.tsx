@@ -1,4 +1,4 @@
-import { Login } from "@perfect-paradise/login";
+import { Example } from '@perfect-paradise/example';
 
 export default function Index() {
   /*
@@ -8,7 +8,7 @@ export default function Index() {
    */
   return (
     <div>
-      <Login />
+      <Example />
     </div>
   );
 }

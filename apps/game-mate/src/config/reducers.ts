@@ -1,7 +1,9 @@
-import { loginReducer } from "@perfect-paradise/login";
+import { exampleApi, exampleReducer } from '@perfect-paradise/example';
 
-const reducers = {
-    login: loginReducer,
-}
+export const reducers = {
+  [exampleApi.reducerPath]: exampleApi.reducer,
+  example: exampleReducer,
+};
 
-export default reducers;
+export const rootMiddleware = (getDefaultMiddleware: any) =>
+  getDefaultMiddleware().concat(exampleApi.middleware);

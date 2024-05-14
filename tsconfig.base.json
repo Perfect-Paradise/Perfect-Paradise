@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@perfect-paradise/login": ["libs/login/src/index.ts"]
+      "@perfect-paradise/example": ["libs/example/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
