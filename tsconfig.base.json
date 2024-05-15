@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@perfect-paradise/example": ["libs/example/src/index.ts"]
+      "@perfect-paradise/game-mate/example": [
+        "libs/game-mate/example/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

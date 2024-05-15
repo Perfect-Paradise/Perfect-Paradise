@@ -23,23 +23,26 @@ interface ChampionInfo {
 export function Example(): JSX.Element {
   const dispatch = useDispatch();
   const championId = useSelector(selectChampionId);
+  const [inputValue, setInputValue] = useState<string>('');
   const [foundChampion, setFoundChampion] = useState<ChampionInfo | null>(null);
   const { data: champions } = useGetAllChampionsQuery({});
 
   const handleSearchClick = () => {
-    const found = champions?.data.find(
-      (champion: ChampionInfo) => champion.id === championId
-    );
-    setFoundChampion(found || null);
+    const championIdNumber = parseInt(inputValue);
+    if (!isNaN(championIdNumber)) {
+      dispatch(setChampionId(championIdNumber));
+      const found = champions?.data.find(
+        (champion: ChampionInfo) => champion.id === championIdNumber
+      );
+      setFoundChampion(found || null);
+    }
   };
 
   return (
-    <div
-      className="flex flex-col items-center relative  w-full h-full p-20"
-    >
+    <div className="flex flex-col items-center relative w-full h-full p-20">
       <input
         type="text"
-        onChange={(e) => dispatch(setChampionId(parseInt(e.target.value)))}
+        onChange={(e) => setInputValue(e.target.value)}
         placeholder="輸入要查找的英雄ID"
         className="border border-gray-300 rounded-md px-4 py-2 mt-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
@@ -61,7 +64,7 @@ export function Example(): JSX.Element {
             alt={foundChampion.key}
             className="rounded-md shadow-md mb-4"
           />
-          <p className="text-gray-700">ID: {foundChampion.id}</p>
+          <p className="text-gray-700">ID: {championId}</p>
           <p className="text-gray-700">Name: {foundChampion.name}</p>
           <p className="text-gray-700">{foundChampion.blurb}</p>
           <div className="mt-4">

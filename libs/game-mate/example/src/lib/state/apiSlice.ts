@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-// https://lol-web-api.op.gg/api/v1.0/internal/bypass/meta
+
 export const exampleApi = createApi({
   reducerPath: 'exampleApi',
   baseQuery: fetchBaseQuery({

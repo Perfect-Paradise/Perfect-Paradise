@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { Provider } from "react-redux";
 import { appStore } from "./store";
-import { reducers, rootMiddleware } from "../config/reducers";
+import { reducers, rootMiddleware } from "../config/reducers.config";
 
 interface Props {
     readonly children: ReactNode;
