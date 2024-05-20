@@ -3,8 +3,6 @@ import { libsReducers } from "../config/libs.config";
 
 type ReducerMap = { [key: string]: any };
 
-console.log(libsReducers)
-
 export const reducers: ReducerMap = libsReducers.reduce((acc, lib) => {
   const apis = lib.apis ? Object.entries(lib.apis).reduce((apiAcc, [reducerPath, api]) => {
     apiAcc[reducerPath] = api.reducer;

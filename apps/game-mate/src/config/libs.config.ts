@@ -2,5 +2,4 @@ import { LibReducerBase, exampleReducers } from "@perfect-paradise/game-mate/exa
 
 export const libsReducers: LibReducerBase[] = [
   exampleReducers,
-  exampleReducers,
 ];
