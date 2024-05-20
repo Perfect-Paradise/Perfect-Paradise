@@ -1,10 +1,11 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
+import { reducers, rootMiddleware } from "./reducers.handler";
 
-export const appStore = (reducers: any, rootMiddleware: any) => {
+export const createAppStore = () => {
   const rootReducer = combineSlices(reducers);
 
   return configureStore({
       reducer: rootReducer,
-      middleware: rootMiddleware
+      middleware: (getDefaultMiddleware) => rootMiddleware(getDefaultMiddleware) as ReturnType<typeof getDefaultMiddleware>
   });
 };

@@ -2,15 +2,14 @@
 
 import type { ReactNode } from "react";
 import { Provider } from "react-redux";
-import { appStore } from "./store";
-import { reducers, rootMiddleware } from "../config/reducers.config";
+import { createAppStore } from "./store";
 
 interface Props {
-    readonly children: ReactNode;
+  readonly children: ReactNode;
 }
 
 export const StoreProvider = ({ children }: Props) => {
-    const store = appStore(reducers, rootMiddleware);
+  const store = createAppStore();
 
-    return <Provider store={store}>{children}</Provider>;
+  return <Provider store={store}>{children}</Provider>;
 }
