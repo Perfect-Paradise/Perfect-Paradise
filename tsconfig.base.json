@@ -17,7 +17,8 @@
     "paths": {
       "@perfect-paradise/game-mate/example": [
         "libs/game-mate/example/src/index.ts"
-      ]
+      ],
+      "@perfect-paradise/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
