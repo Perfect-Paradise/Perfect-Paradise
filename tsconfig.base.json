@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@perfect-paradise/game-mate/chat-room": [
+        "libs/game-mate/chat-room/src/index.ts"
+      ],
+      "@perfect-paradise/game-mate/chat-room/server": [
+        "libs/game-mate/chat-room/src/server.ts"
+      ],
       "@perfect-paradise/game-mate/example": [
         "libs/game-mate/example/src/index.ts"
       ],
