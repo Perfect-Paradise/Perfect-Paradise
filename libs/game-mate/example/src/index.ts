@@ -1,13 +1,14 @@
-import { LibReducerBase } from '@perfect-paradise/shared';
+import { ReduxLibrarySetting } from '@perfect-paradise/shared';
 import { exampleApi } from './lib/state/apiSlice';
 import { exampleReducer } from './lib/state/exampleSlice';
 
-export const exampleReducers: LibReducerBase = {
-  apis: {
-    [exampleApi.reducerPath]: exampleApi,
-  },
+export const exampleFeatureSetting: ReduxLibrarySetting = {
   reducers: {
-    example: exampleReducer
+    example: exampleReducer,
+    [exampleApi.reducerPath]: exampleApi.reducer,
+  },
+  middlewares: {
+    [exampleApi.reducerPath]: exampleApi.middleware,
   }
 }
 

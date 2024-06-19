@@ -1,1 +1,1 @@
-export * from './lib/states/sharedSlice';
+export * from './lib/interfaces/feature';
