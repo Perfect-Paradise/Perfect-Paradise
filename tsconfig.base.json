@@ -18,6 +18,9 @@
       "@perfect-paradise/game-mate/example": [
         "libs/game-mate/example/src/index.ts"
       ],
+      "@perfect-paradise/game-mate/liveList": [
+        "libs/game-mate/liveList/src/index.ts"
+      ],
       "@perfect-paradise/shared": ["libs/shared/src/index.ts"]
     }
   },
